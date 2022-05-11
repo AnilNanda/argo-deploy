@@ -1,4 +1,4 @@
-argo-deploy is a private github action used to update image tag in helm values file
+argo-deploy is a github action used to update image tag in helm values file
 
 Action has to be invoked with below parameters
 
@@ -15,7 +15,6 @@ Example
         uses: actions/checkout@v2
         with:
           repository: <org>/argo-deploy
-          token: ${{ secrets.GIT_PASSWORD }} # stored in GitHub secrets
           path: .github/actions/argo-deploy
           
       - name: Update image tag in helm chart

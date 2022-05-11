@@ -1,0 +1,32 @@
+# action.yml
+name: 'Update YAML'
+description: 'Update helm values files with new image'
+inputs:
+  image_id:
+    description: Image tag of the docker image
+    required: true
+    default: 'latest'
+  git_password:
+    description: Personal Access Token for k8s deployment files repo
+    required: true
+  app_name:
+    description: App name to be update
+    required: true
+  service_name:
+    description: Service name to be update
+    required: true
+  environment:
+    description: Environment to be update
+    required: true
+outputs:
+  status: # id of output
+    description: 'YAML update status'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.image_id }}
+    - ${{ inputs.git_password }}
+    - ${{ inputs.app_name }}
+    - ${{ inputs.service_name }}
+    - ${{ inputs.environment }}

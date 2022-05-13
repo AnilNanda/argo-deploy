@@ -2,11 +2,11 @@ argo-deploy is a github action used to update image tag in helm values file
 
 Action has to be invoked with below parameters
 
-image_id
-git_password
-app_name
-service_name
-environment
+- image_id
+- git_password
+- app_name
+- service_name
+- environment
 
 
 Example
